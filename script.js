@@ -16,22 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
 
     function showPage(pageId) {
-        // Hide all pages
         pages.forEach(page => page.classList.remove('active'));
-        
-        // Show the target page
         const targetPage = document.getElementById(pageId);
         if (targetPage) {
             targetPage.classList.add('active');
-            // Re-initialize AOS for the new content to animate in
             AOS.refresh();
-            // Animate skill bars if on "Sobre mí" page
             if (pageId === 'sobre-mi') {
                 animateSkillBars();
             }
         }
         
-        // Update active nav link style
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${pageId}`) {
@@ -39,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         
-        // Close mobile menu after navigation
         mobileMenu.classList.add('hidden');
     }
 
@@ -48,11 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const pageId = this.getAttribute('href').substring(1);
             showPage(pageId);
-            window.scrollTo(0, 0); // Scroll to top of the new page
+            window.scrollTo(0, 0);
         });
     });
 
-    // Mobile menu toggle
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
@@ -65,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function() {
             const filter = this.dataset.filter;
             
-            // Update button styles
             filterButtons.forEach(btn => {
                 btn.classList.remove('active', 'neon-green-button');
                 btn.classList.add('bg-gray-800', 'hover:bg-green-900/50');
@@ -73,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('active', 'neon-green-button');
             this.classList.remove('bg-gray-800', 'hover:bg-green-900/50');
             
-            // Show/hide portfolio categories
             portfolioCategories.forEach(category => {
                 if (category.id === filter) {
                     category.classList.remove('hidden');
@@ -87,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- Skill Bar Animation ---
     function animateSkillBars() {
         const skillBars = document.querySelectorAll('.skill-bar-inner');
         skillBars.forEach(bar => {
@@ -96,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Particle Effect Script for Header ---
+    // --- Particle Effect Script ---
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -106,29 +95,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         class Particle {
             constructor(x, y, dX, dY, size, color) {
-                this.x = x;
-                this.y = y;
-                this.directionX = dX;
-                this.directionY = dY;
-                this.size = size;
-                this.color = color;
+                this.x = x; this.y = y; this.directionX = dX; this.directionY = dY; this.size = size; this.color = color;
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
             }
             update() {
-                if (this.x > canvas.width || this.x < 0) {
-                    this.directionX = -this.directionX;
-                }
-                if (this.y > canvas.height || this.y < 0) {
-                    this.directionY = -this.directionY;
-                }
-                this.x += this.directionX;
-                this.y += this.directionY;
-                this.draw();
+                if (this.x > canvas.width || this.x < 0) { this.directionX = -this.directionX; }
+                if (this.y > canvas.height || this.y < 0) { this.directionY = -this.directionY; }
+                this.x += this.directionX; this.y += this.directionY; this.draw();
             }
         }
 
@@ -139,19 +114,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 let size = (Math.random() * 2) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 0.4) - 0.2;
-                let directionY = (Math.random() * 0.4) - 0.2;
-                // Particle color is green
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, 'rgba(0, 179, 0, 0.5)'));
+                let dX = (Math.random() * 0.4) - 0.2;
+                let dY = (Math.random() * 0.4) - 0.2;
+                particlesArray.push(new Particle(x, y, dX, dY, 'rgba(0, 179, 0, 0.5)'));
             }
         }
 
         function animateParticles() {
             requestAnimationFrame(animateParticles);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-            }
+            for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); }
         }
         
         initParticles();
@@ -163,8 +135,33 @@ document.addEventListener('DOMContentLoaded', function () {
             initParticles();
         });
     }
-    
-    // Set initial page based on URL hash or default to 'inicio'
+
+    // --- Visitor Counter Logic ---
+    function handleVisitorCounter() {
+        // Use sessionStorage to only increment once per session
+        if (!sessionStorage.getItem('sessionVisited')) {
+            let count = localStorage.getItem('portfolioVisitorCount');
+            
+            if (count === null) {
+                count = 1;
+            } else {
+                count = parseInt(count) + 1;
+            }
+            
+            localStorage.setItem('portfolioVisitorCount', count);
+            sessionStorage.setItem('sessionVisited', 'true');
+        }
+        
+        // Always display the count from localStorage
+        const count = localStorage.getItem('portfolioVisitorCount') || 1;
+        const counterElement = document.getElementById('visitor-counter');
+        if (counterElement) {
+            counterElement.textContent = count;
+        }
+    }
+
+    // --- Initial Setup ---
     const initialPage = window.location.hash ? window.location.hash.substring(1) : 'inicio';
     showPage(initialPage);
+    handleVisitorCounter(); // Call the visitor counter on page load
 });
