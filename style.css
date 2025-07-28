@@ -1,0 +1,87 @@
+/* Custom base styles */
+body {
+    background-color: #000000;
+    color: #e5e7eb; /* gray-200 */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* NEW: Neon GREEN effects and custom colors */
+.neon-green-text {
+    color: #33ff33;
+    text-shadow: 0 0 5px #00b300, 0 0 10px #00b300, 0 0 15px #33ff33, 0 0 20px #33ff33;
+}
+
+.neon-green-box {
+    box-shadow: 0 0 5px #00b300, 0 0 10px #00b300, inset 0 0 5px #00b300;
+    border-color: #00b300;
+}
+
+.neon-green-button {
+    background-color: #008000;
+    color: white;
+    border: 1px solid #33ff33;
+    box-shadow: 0 0 8px #008000, 0 0 12px #008000, 0 0 16px #33ff33;
+    transition: all 0.3s ease-in-out;
+}
+.neon-green-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #008000, 0 0 20px #008000, 0 0 28px #33ff33;
+}
+
+/* Background with subtle texture */
+.minecraft-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    background-repeat: repeat;
+}
+
+/* Card styling */
+.card-bg {
+    background-color: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid #00b30030;
+    transition: all 0.3s ease;
+}
+.card-bg:hover {
+    border-color: #00b300;
+    transform: translateY(-5px);
+}
+
+/* Particle canvas for header */
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Page transition styles */
+.page {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.8s;
+}
+.page.active {
+    display: block; /* Shown when active */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active nav link style */
+.nav-link.active {
+    color: #33ff33;
+    text-shadow: 0 0 5px #00b300;
+}
+
+/* Skill bar animation */
+.skill-bar-inner {
+    transition: width 1.5s ease-out;
+    width: 0%;
+}
