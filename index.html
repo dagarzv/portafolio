@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dagarvz | Desarrollador Full Stack de Minecraft & Discord</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS Library (CDN) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black/80 backdrop-blur-sm border-b border-green-900/50 fixed top-0 left-0 right-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="nav-link text-2xl font-orbitron font-bold neon-green-text">dagarvz</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Inicio</a>
+                        <a href="#sobre-mi" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Sobre mí</a>
+                        <a href="#servicios" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Servicios</a>
+                        <a href="#portafolio" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Portafolio</a>
+                        <a href="#plugins" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Plugins Gratis</a>
+                        <a href="#bots" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Bots</a>
+                        <a href="#contacto" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-green-900/50 transition-colors">Contacto</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-green-900/50 focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Inicio</a>
+                <a href="#sobre-mi" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Sobre mí</a>
+                <a href="#servicios" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Servicios</a>
+                <a href="#portafolio" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Portafolio</a>
+                <a href="#plugins" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Plugins Gratis</a>
+                <a href="#bots" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Bots</a>
+                <a href="#contacto" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-green-900/50">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Page: Inicio -->
+        <section id="inicio" class="page active">
+            <div class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+                <canvas id="particle-canvas"></canvas>
+                <div class="relative z-10 p-4" data-aos="fade-up">
+                    <img src="https://placehold.co/150x150/000000/008000?text=DV" alt="Avatar de dagarvz" class="w-36 h-36 mx-auto rounded-full border-4 border-green-800 shadow-[0_0_20px_rgba(0,179,0,0.7)] mb-6">
+                    <h1 class="font-orbitron text-4xl md:text-6xl font-bold tracking-wider neon-green-text">dagarvz</h1>
+                    <p class="text-gray-300 text-lg md:text-2xl mt-3 mb-5">Desarrollador Full Stack de Minecraft & Discord</p>
+                    <blockquote class="font-orbitron text-xl md:text-3xl font-light text-white italic">
+                        “Minecraft es mi mundo. Yo lo configuro.”
+                    </blockquote>
+                    <a href="#portafolio" class="nav-link mt-8 neon-green-button font-bold py-3 px-8 rounded-lg text-lg inline-block">
+                        Explorar mi portafolio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Sobre mí -->
+        <section id="sobre-mi" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12" data-aos="fade-down">Sobre <span class="neon-green-text">Mí</span></h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold font-orbitron mb-4">4 Años Creando Experiencias</h3>
+                        <p class="text-gray-400 mb-4">Desde 2021, me he especializado en el ecosistema de Minecraft y Discord. Mi pasión es transformar ideas en realidad, ya sea configurando un servidor complejo desde cero, desarrollando plugins a medida que mejoren la jugabilidad, o creando bots que automaticen y dinamicen comunidades.</p>
+                        <p class="text-gray-400">Mi enfoque es siempre profesional, buscando la optimización, la seguridad y una experiencia de usuario final impecable.</p>
+                        
+                        <div class="mt-8 space-y-6">
+                           <div class="flex items-start">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-900/50 flex items-center justify-center mr-4"><i data-lucide="server-cog"></i></div>
+                               <div>
+                                   <h4 class="font-bold">2021 - Inicios y Configuración</h4>
+                                   <p class="text-sm text-gray-500">Primeros pasos con servidores Spigot/Paper y plugins públicos.</p>
+                               </div>
+                           </div>
+                           <div class="flex items-start">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-900/50 flex items-center justify-center mr-4"><i data-lucide="puzzle"></i></div>
+                               <div>
+                                   <h4 class="font-bold">2022 - Desarrollo de Plugins</h4>
+                                   <p class="text-sm text-gray-500">Aprendizaje de Java y Skript para crear funcionalidades personalizadas.</p>
+                               </div>
+                           </div>
+                           <div class="flex items-start">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-900/50 flex items-center justify-center mr-4"><i data-lucide="bot"></i></div>
+                               <div>
+                                   <h4 class="font-bold">2023 - Expansión a Discord</h4>
+                                   <p class="text-sm text-gray-500">Desarrollo de bots con Discord.js para integración y automatización.</p>
+                               </div>
+                           </div>
+                           <div class="flex items-start">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-900/50 flex items-center justify-center mr-4"><i data-lucide="flame"></i></div>
+                               <div>
+                                   <h4 class="font-bold">2024 - Mods y Launchers</h4>
+                                   <p class="text-sm text-gray-500">Incursión en el desarrollo de mods con Forge/Fabric y launchers.</p>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-gray-300">Java</span>
+                                <span class="text-sm font-medium text-green-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full skill-bar-inner" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-gray-300">Skript</span>
+                                <span class="text-sm font-medium text-green-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full skill-bar-inner" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-gray-300">Forge / Fabric API</span>
+                                <span class="text-sm font-medium text-green-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full skill-bar-inner" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-gray-300">Discord.js</span>
+                                <span class="text-sm font-medium text-green-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full skill-bar-inner" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-base font-medium text-gray-300">GitHub / CI/CD</span>
+                                <span class="text-sm font-medium text-green-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full skill-bar-inner" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Servicios -->
+        <section id="servicios" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12" data-aos="fade-down">Mis <span class="neon-green-text">Servicios</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up">
+                        <i data-lucide="server" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Configuración de Servidores</h3>
+                        <p class="text-gray-400">Instalación y optimización de Paper, Purpur, Forge, Fabric. Seguridad y rendimiento.</p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <i data-lucide="puzzle" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Creación de Plugins Java</h3>
+                        <p class="text-gray-400">Desarrollo de plugins a medida para cualquier necesidad: economías, minijuegos, etc.</p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <i data-lucide="flame" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Desarrollo de Mods</h3>
+                        <p class="text-gray-400">Creación de mods para Forge y Fabric, añadiendo nuevos bloques, items y mecánicas.</p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="bot" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Bots de Discord</h3>
+                        <p class="text-gray-400">Bots personalizados con Discord.js o Python para moderación, tickets, logs y más.</p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                        <i data-lucide="terminal-square" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Launchers Personalizados</h3>
+                        <p class="text-gray-400">Launchers con login, descarga de mods, control de RAM y actualizaciones automáticas.</p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                        <i data-lucide="settings-2" class="mx-auto w-12 h-12 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold font-orbitron mb-2">Configuración de Discord</h3>
+                        <p class="text-gray-400">Diseño de servidores de Discord, con roles, canales, permisos y automatización.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Portafolio -->
+        <section id="portafolio" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-8" data-aos="fade-down">Mi <span class="neon-green-text">Portafolio</span></h2>
+                <div class="flex justify-center space-x-4 mb-12" data-aos="fade-up">
+                    <button class="portfolio-filter-btn active neon-green-button py-2 px-5 rounded-lg" data-filter="terminados">✅ Proyectos Terminados</button>
+                    <button class="portfolio-filter-btn py-2 px-5 rounded-lg bg-gray-800 hover:bg-green-900/50 transition-colors" data-filter="actuales">🟠 Proyectos Actuales</button>
+                </div>
+
+                <div id="portfolio-grid">
+                    <div class="portfolio-category active" id="terminados">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="card-bg rounded-xl overflow-hidden" data-aos="fade-up">
+                                <img src="https://placehold.co/600x400/000000/008000?text=LiteMC+Launcher" alt="Proyecto LiteMC Launcher" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold font-orbitron mb-2">Launcher para “LiteMC Network”</h3>
+                                    <p class="text-gray-400 text-sm mb-4">Launcher Forge con sistema de login y descarga de mods. Entregado: 2024.</p>
+                                    <div class="flex items-center gap-2 text-green-400 text-xs">
+                                        <i data-lucide="code"></i> Java
+                                        <i data-lucide="flame"></i> Forge
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bg rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                                <img src="https://placehold.co/600x400/000000/008000?text=SupportBot+v2" alt="Proyecto SupportBot v2" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold font-orbitron mb-2">Bot Discord “SupportBot v2”</h3>
+                                    <p class="text-gray-400 text-sm mb-4">Bot de tickets y soporte avanzado para una comunidad grande. Entregado: 2023.</p>
+                                    <div class="flex items-center gap-2 text-green-400 text-xs">
+                                        <i data-lucide="bot"></i> Discord.js
+                                        <i data-lucide="database"></i> MongoDB
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-bg rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                                <img src="https://placehold.co/600x400/000000/008000?text=ShadowPvP" alt="Proyecto ShadowPvP" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold font-orbitron mb-2">Configuración ShadowPvP</h3>
+                                    <p class="text-gray-400 text-sm mb-4">Configuración completa de servidor Factions con plugins premium. Entregado: 2021.</p>
+                                    <div class="flex items-center gap-2 text-green-400 text-xs">
+                                        <i data-lucide="server"></i> PaperMC
+                                        <i data-lucide="shield"></i> Seguridad
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-category hidden" id="actuales">
+                         <div class="card-bg rounded-xl p-6" data-aos="fade-up">
+                            <h3 class="text-xl font-bold font-orbitron text-green-400">🎮 WorldQuest RPG – En desarrollo</h3>
+                            <p class="text-gray-400 mt-2 mb-4">Sistema completo de misiones, combate, menús y economía personalizada para un servidor RPG a gran escala.</p>
+                            <div class="w-full bg-gray-800 rounded-full h-4">
+                                <div class="bg-green-600 h-4 rounded-full text-center text-white text-xs leading-4" style="width: 65%">65%</div>
+                            </div>
+                            <p class="text-sm font-semibold text-white mt-3">Entrega estimada: Agosto 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Plugins Gratis -->
+        <section id="plugins" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12" data-aos="fade-down">Plugins <span class="neon-green-text">Gratuitos</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-bg rounded-xl p-6 flex flex-col" data-aos="fade-up">
+                        <div class="flex-grow">
+                            <div class="flex items-center mb-3">
+                                <i data-lucide="shield-check" class="w-8 h-8 text-green-500 mr-3"></i>
+                                <h3 class="text-2xl font-bold font-orbitron">AutoModPlus</h3>
+                            </div>
+                            <p class="text-gray-400 mb-3">Detecta palabras ofensivas, mutea y reporta automáticamente.</p>
+                            <span class="inline-block bg-gray-800 text-green-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">MC 1.8–1.20</span>
+                        </div>
+                        <a href="#" class="mt-6 neon-green-button font-bold py-2 px-4 rounded-lg text-center w-full sm:w-auto">
+                            <i data-lucide="github" class="inline-block w-4 h-4 mr-2"></i> Ver en GitHub
+                        </a>
+                    </div>
+                    <div class="card-bg rounded-xl p-6 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex-grow">
+                            <div class="flex items-center mb-3">
+                                <i data-lucide="move-up-right" class="w-8 h-8 text-green-500 mr-3"></i>
+                                <h3 class="text-2xl font-bold font-orbitron">ItemTP</h3>
+                            </div>
+                            <p class="text-gray-400 mb-3">Permite teletransportarse usando un ítem especial configurable.</p>
+                            <span class="inline-block bg-gray-800 text-green-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">MC 1.16.5–1.19</span>
+                        </div>
+                        <a href="#" class="mt-6 neon-green-button font-bold py-2 px-4 rounded-lg text-center w-full sm:w-auto">
+                            <i data-lucide="download" class="inline-block w-4 h-4 mr-2"></i> Spigot
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Bots -->
+        <section id="bots" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+             <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12" data-aos="fade-down">Bots de <span class="neon-green-text">Discord</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-bg rounded-xl p-6" data-aos="fade-up">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="shield" class="w-8 h-8 text-green-500 mr-3"></i>
+                            <h3 class="text-xl font-bold font-orbitron">Staff Bots</h3>
+                        </div>
+                        <p class="text-gray-400">Bots para moderación, logs de actividad, sanciones y gestión interna del equipo. <span class="font-bold text-green-400">✅ Activo</span></p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="message-circle" class="w-8 h-8 text-green-500 mr-3"></i>
+                            <h3 class="text-xl font-bold font-orbitron">Sistemas de Tickets</h3>
+                        </div>
+                        <p class="text-gray-400">Sistemas de soporte mediante tickets con paneles interactivos y transcripciones. <span class="font-bold text-yellow-400">🛠️ Personalizado</span></p>
+                    </div>
+                    <div class="card-bg rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="terminal" class="w-8 h-8 text-green-500 mr-3"></i>
+                            <h3 class="text-xl font-bold font-orbitron">Bots de Comandos</h3>
+                        </div>
+                        <p class="text-gray-400">Bots con comandos personalizados para utilidades, juegos o integración con tu servidor de Minecraft. <span class="font-bold text-blue-400">🔒 Privado</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Contacto -->
+        <section id="contacto" class="page py-24 px-4 sm:px-6 lg:px-8 minecraft-background">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12" data-aos="fade-down">Ponte en <span class="neon-green-text">Contacto</span></h2>
+                <div class="card-bg rounded-xl p-8" data-aos="fade-up">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300">Nombre</label>
+                                <div class="mt-1">
+                                    <input type="text" name="name" id="name" class="block w-full shadow-sm py-3 px-4 bg-gray-900/50 border border-gray-700 rounded-md focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="contact-info" class="block text-sm font-medium text-gray-300">Correo</label>
+                                <div class="mt-1">
+                                    <input type="text" name="contact-info" id="contact-info" class="block w-full shadow-sm py-3 px-4 bg-gray-900/50 border border-gray-700 rounded-md focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block text-sm font-medium text-gray-300">Mensaje</label>
+                                <div class="mt-1">
+                                    <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 bg-gray-900/50 border border-gray-700 rounded-md focus:ring-green-500 focus:border-green-500"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2 text-center mt-8">
+                            <button type="submit" class="neon-green-button font-bold py-3 px-8 rounded-lg text-lg">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-12 text-center" data-aos="fade-up">
+                    <p class="text-lg mb-6 text-gray-300">También puedes encontrarme aquí:</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-x-8 gap-y-4">
+                        <div class="flex items-center gap-2 text-gray-300 text-lg">
+                            <i data-lucide="message-square" class="text-green-500"></i>
+                            <span>Discord: <span class="font-bold text-white">dagarvz</span></span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-lg">
+                            <i data-lucide="github" class="text-green-500"></i>
+                            <a href="#" class="hover:text-green-400 transition-colors font-bold text-white">GitHub</a>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-lg">
+                            <i data-lucide="mail" class="text-green-500"></i>
+                            <a href="mailto:dagarvz@example.com" class="hover:text-green-400 transition-colors font-bold text-white">Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 text-center border-t border-green-900/30">
+        <p class="font-orbitron text-xl md:text-2xl neon-green-text">
+            “No solo creo servidores. Creo experiencias.”
+        </p>
+        <p class="text-gray-600 mt-4 text-sm">© 2025 dagarvz. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
